@@ -1,0 +1,57 @@
+.nav {
+	width: fit-content;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 5.3rem 2.5rem;
+}
+
+.nav h3 {
+	font-size: 2.4rem;
+	font-weight: 600;
+}
+
+.nav h5 {
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+.logo a {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.logo img {
+	width: 4.2rem;
+	height: 4.2rem;
+	border-radius: 100rem;
+}
+
+.func {
+	margin-top: 5.3em;
+}
+.func li {
+	height: 4.8rem;
+}
+.func li a {
+	display: flex;
+	align-items: center;
+	gap: 1.3rem;
+}
+
+.func li a svg {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.user {
+	justify-self: flex-start;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.user img {
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 100rem;
+}

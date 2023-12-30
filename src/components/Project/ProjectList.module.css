@@ -1,0 +1,11 @@
+.list {
+	padding: 3rem 0;
+	margin-bottom: 3rem;
+}
+
+.list ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	animation: opacity-effect ease-in-out 1s;
+}

@@ -1,0 +1,37 @@
+.function {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	height: 5rem;
+}
+
+.number {
+	position: relative;
+	font-size: 2.4rem;
+	line-height: 1;
+	font-weight: 400;
+	display: inline-flex;
+	align-items: center;
+	gap: 9rem;
+}
+
+.current::before {
+	content: "";
+	position: absolute;
+	width: 4.38rem;
+	height: 0px;
+	left: 30%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #e0e0e0;
+	transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0);
+}
+
+.total {
+	color: var(--muted-foreground);
+}
+
+.next,
+.prev {
+	height: 100%;
+}

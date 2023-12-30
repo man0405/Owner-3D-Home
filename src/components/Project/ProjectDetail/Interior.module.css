@@ -1,0 +1,92 @@
+.item {
+	height: 45rem;
+	transition: all 0.4s ease-in-out;
+	position: relative;
+}
+
+.item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.det {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+	color: white;
+	opacity: 0;
+}
+
+.det:hover {
+	opacity: 1;
+	transition: all 0.15s ease 0s;
+}
+
+.category {
+	position: absolute;
+	opacity: 0;
+	top: 2rem;
+	margin-top: 2rem;
+	left: 0;
+	padding: 1rem 2rem;
+}
+
+.det:hover > .category {
+	transition: all 0.15s ease 0.4s;
+	opacity: 1;
+	margin-top: 0;
+}
+
+.category span {
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.2rem;
+	margin-right: 1.4rem;
+}
+
+.more {
+	position: absolute;
+	opacity: 0;
+	bottom: -6rem;
+	left: 0;
+	right: 0;
+	padding-left: 3rem;
+	background-color: var(--gray29);
+	height: 60px;
+	line-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.det:hover > .more {
+	transition: all 0.15s ease 0.4s;
+	opacity: 1;
+	margin-top: 0;
+	bottom: 0;
+}
+
+.more span {
+	font-size: 1.4rem;
+	letter-spacing: 0.2rem;
+	font-weight: 600;
+}
+
+.btn {
+	height: 6rem;
+	width: 6rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 0 2rem;
+	background-color: var(--gray1);
+	justify-content: center;
+}
+
+.btn svg {
+	height: 6rem;
+	font-size: 2rem;
+	color: var(--primary);
+}

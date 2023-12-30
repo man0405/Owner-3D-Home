@@ -1,0 +1,66 @@
+.main {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+}
+
+.left img {
+	width: 73.2rem;
+	height: 74.3rem;
+}
+
+.right {
+	padding: 3.2rem 6.4rem;
+}
+
+.right form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.right h1 {
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-bottom: 6.4rem;
+}
+
+.right .input {
+	margin-bottom: 1.6rem;
+	position: relative;
+	color: #828282;
+}
+.input svg {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 1.2rem;
+}
+
+.right input {
+	display: flex;
+	width: 35.8rem;
+	height: 4rem;
+	padding: 0.8rem 0.8rem 0.8rem 3.2rem;
+	align-items: center;
+	border-radius: 0.8rem;
+	border: 1px solid var(--border);
+}
+
+.forgot {
+	font-size: 1.4rem;
+	font-weight: 400;
+	color: var(--primary-color);
+	align-self: flex-end;
+}
+
+.right button {
+	width: 35.8rem;
+	height: 4rem;
+	margin-top: 3.2rem;
+	border-radius: 1rem;
+	background-color: var(--primary-color);
+	color: white;
+	font-size: 1.6rem;
+	font-weight: 400;
+}

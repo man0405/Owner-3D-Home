@@ -1,0 +1,76 @@
+.customer {
+	height: 100%;
+	margin-top: 1.8rem;
+}
+.customer table {
+	/* border: 1px solid lightgray; */
+	border-collapse: separate;
+	width: 100%;
+	height: 90%;
+	border-spacing: 0 1.5rem;
+}
+.customer thead {
+	margin-bottom: 1.5rem;
+}
+
+.customer thead th {
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+
+.customer th {
+	padding: 2px 4px;
+}
+.customer tr th:first-child {
+	padding-left: 3rem;
+}
+
+.customer tr td:first-child {
+	padding-left: 3rem;
+}
+
+.customer tbody {
+	overflow: hidden;
+}
+
+.customer td:first-child,
+.customer th:first-child {
+	border-radius: 10px 0 0 10px;
+}
+
+.customer td:last-child,
+.customer th:last-child {
+	border-radius: 0 10px 10px 0;
+}
+
+.customer tbody tr {
+	background-color: white;
+	overflow: hidden;
+	padding: 2rem;
+	margin-bottom: 1rem;
+}
+
+.func {
+	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.func button {
+	width: 14rem;
+
+	height: 4rem;
+	border-radius: 10px;
+	border: none;
+	font-size: 1.8rem;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: var(--primary-color);
+	color: white;
+}
+
+.func button:disabled {
+	opacity: 0.5;
+}

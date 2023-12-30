@@ -1,0 +1,35 @@
+.widget {
+	display: inline-flex;
+	align-items: center;
+	width: 29rem;
+	gap: 2.3rem;
+	padding: 2.8rem 2.8rem 2.8rem 2.8rem;
+}
+
+.icon {
+	--color: 0, 0, 0;
+	background-color: rgba(var(--color), 0.1);
+	padding: 1.8rem;
+	width: fit-content;
+	border-radius: 100rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.icon svg {
+	color: rgb(var(--color));
+	width: 2.4rem;
+	height: 2.4rem;
+	opacity: 1;
+}
+
+.info h3 {
+	font-weight: 2.2rem;
+	font-weight: 800;
+	opacity: 0.7;
+}
+.info h5 {
+	font-size: 1.4rem;
+	font-weight: 400;
+	opacity: 0.7;
+}

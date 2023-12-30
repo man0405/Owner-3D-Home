@@ -1,0 +1,14 @@
+.icon svg {
+	width: 8rem;
+	height: 8rem;
+	color: var(--primary);
+}
+
+.desc {
+	font-size: 2.4rem;
+	line-height: 1.5;
+}
+
+.btn {
+	font-size: 1.8rem;
+}

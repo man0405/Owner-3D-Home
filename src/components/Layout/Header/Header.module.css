@@ -1,0 +1,5 @@
+.header {
+	grid-area: header;
+	font-weight: 700;
+	margin-top: 3.5rem;
+}
