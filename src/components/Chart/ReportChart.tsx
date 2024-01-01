@@ -34,7 +34,7 @@ const data = {
 	datasets: [
 		{
 			label: "View",
-			data: [65, 59, 80, 81, 56, 55, 40],
+			data: [65, 59, 80, 85.3, 56, 55, 40],
 			fill: true,
 			backgroundColor: "rgba(75, 192, 192, 0.2)",
 			borderColor: "rgb(75, 192, 192)",
@@ -43,9 +43,9 @@ const data = {
 	],
 };
 
-export default function ReportChart() {
+export default function ReportChart({ style }: { style?: {} }) {
 	return (
-		<Card className={classes.chart}>
+		<Card className={classes.chart} style={style}>
 			<Line data={data} options={options} />
 		</Card>
 	);

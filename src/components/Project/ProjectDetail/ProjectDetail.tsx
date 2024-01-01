@@ -1,9 +1,7 @@
 "use client";
-import React, { use, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { IoChevronForward } from "react-icons/io5";
 
-// import Slider from "react-slick";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,6 +16,7 @@ import { TbToiletPaper } from "react-icons/tb";
 
 import HeadingProject from "@/components/UI/type/HeadingProject";
 import Interior from "./Interior";
+import ReportChart from "@/components/Chart/ReportChart";
 
 import { HouseInfo } from "@/utils/type";
 import { useFetch } from "@/hook/useFetch";
@@ -81,7 +80,7 @@ export default function ProjectDetail(props: { data: HouseInfo }) {
 		centerMode: true,
 		infinite: true,
 		centerPadding: "180px",
-		slidesToShow: 2,
+		slidesToShow: 1,
 		speed: 500,
 	};
 
@@ -94,22 +93,22 @@ export default function ProjectDetail(props: { data: HouseInfo }) {
 
 	return (
 		<>
-			<HeadingProject
-				first={first}
-				second={second}
-				desc={
-					props.data.name.toUpperCase() +
-					" " +
-					props.data.information.street.toUpperCase() +
-					" " +
-					props.data.information.district?.toUpperCase() +
-					" " +
-					props.data.information.city.toUpperCase() +
-					" " +
-					props.data.information.country.toUpperCase()
-				}
-			/>
-			<div className={classes.detail}>
+			<div className={classes.left}>
+				<HeadingProject
+					first={first}
+					second={second}
+					desc={
+						props.data.name.toUpperCase() +
+						" " +
+						props.data.information.street.toUpperCase() +
+						" " +
+						props.data.information.district?.toUpperCase() +
+						" " +
+						props.data.information.city.toUpperCase() +
+						" " +
+						props.data.information.country.toUpperCase()
+					}
+				/>
 				<div className={`${classes.image} container`}>
 					<Image
 						src={
@@ -125,17 +124,13 @@ export default function ProjectDetail(props: { data: HouseInfo }) {
 					<div className={classes.subtile}>Working Process</div>
 					<div className={classes.description}>
 						<p>{props.data.description}</p>
-						{/* <p>{DUMMY_DATA["process-2"]}</p> */}
-						<div className={classes.get}>
-							<span>What You Get: </span>
-							<ul>
-								<li>Concept</li>
-								<li>Design</li>
-								<li>3D Modeling</li>
-							</ul>
-						</div>
 					</div>
 				</div>
+			</div>
+
+			<div className={classes.right}>
+				<ReportChart style={{ height: "20rem" }} />
+
 				<div className={classes.interior}>
 					<div className={`${classes.subtile} container`}>Interior Service</div>
 
@@ -209,16 +204,6 @@ export default function ProjectDetail(props: { data: HouseInfo }) {
 								</tr>
 							</tbody>
 						</table>
-					</div>
-				</div>
-				<div className={` container ${classes.owner} `}>
-					<div className={classes.avatar}>
-						<img src={DUMMY_DATA.avatar} alt="" />
-					</div>
-					<div className={classes.info}>
-						<div className={classes.name}>{DUMMY_DATA.owner}</div>
-						<div className={classes.phone}>{DUMMY_DATA.phone}</div>
-						<div className={classes.email}>{DUMMY_DATA.email}</div>
 					</div>
 				</div>
 			</div>

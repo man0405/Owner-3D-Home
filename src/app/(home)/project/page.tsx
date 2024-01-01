@@ -8,16 +8,16 @@ import ProjectList from "@/components/Project/ProjectList";
 
 import { useFetch } from "@/hook/useFetch";
 import { useSearchParams } from "next/navigation";
-import { RootObject } from "@/utils/type";
+import { HouseInfo, customPage } from "@/utils/type";
 
 export default function page() {
-	const { data, loading, error, fetchData } = useFetch<RootObject>();
+	const { data, loading, error, fetchData } = useFetch<customPage<HouseInfo>>();
 	const searchParams = useSearchParams();
 	const search = searchParams.get("page");
 	const page = search ? parseInt(search) : 1;
 	useEffect(() => {
 		console.log("file: page.tsx:56 ~ ProjectPage ~ page:", page);
-		fetchData({ method: "GET", link: `house/pagination/${page}/6/id` });
+		fetchData({ method: "GET", link: `house/owner-houses/${page}/6/id` });
 	}, [page]);
 
 	if (loading) return <div>Loading...</div>;
@@ -30,11 +30,11 @@ export default function page() {
 					<section className="container">
 						<Suspense fallback={<>loading</>}>
 							{/* <ProjectList data={DUMMY_DATA.data} /> */}
-							<ProjectList data={data.response.content} />
+							<ProjectList data={data.content} />
 						</Suspense>
 						<Function
-							page={data.response.pageable.pageNumber + 1}
-							total={data.response.totalPages}
+							page={data.pageable.pageNumber}
+							total={data.pageable.totalPages - 1}
 						/>
 					</section>
 				)}

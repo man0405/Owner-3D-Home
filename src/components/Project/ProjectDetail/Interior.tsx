@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 import classes from "./Interior.module.css";
-import { ShowModalDemo } from "@/components/ui/Modal/ShowModal";
-import Modal3D from "@/components/ui/Modal/Modal3D";
+import { ShowModalDemo } from "@/components/UI/Modal/ShowModal";
+import Modal3D from "@/components/UI/Modal/Modal3D";
 
 export default function Interior(props: {
 	img: string;

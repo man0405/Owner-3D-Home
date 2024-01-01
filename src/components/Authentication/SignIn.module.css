@@ -64,3 +64,7 @@
 	font-size: 1.6rem;
 	font-weight: 400;
 }
+
+.right button:hover {
+	opacity: 0.8;
+}

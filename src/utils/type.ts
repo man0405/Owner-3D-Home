@@ -1,7 +1,6 @@
-type Direction = "NORTH" | "SOUTH" | "EAST" | "WEST";
+export type Direction = "NORTH" | "SOUTH" | "EAST" | "WEST";
 
-interface Information {
-	id: number;
+export interface Information {
 	number: number;
 	street: string;
 	district: string;

@@ -31,7 +31,7 @@ body {
 
 	display: grid;
 	grid-template-columns: 1fr 2fr 2fr 2fr;
-	grid-template-rows: 0.5fr 2fr 2fr 0.5fr;
+	grid-template-rows: 0.2fr 2fr 2fr 0.5fr;
 	grid-template-areas:
 		"nav header header header"
 		"nav main main main"
@@ -113,4 +113,40 @@ input:focus {
 	padding: 1rem 2.2rem;
 	width: fit-content;
 	cursor: pointer;
+}
+
+.error {
+	color: red !important;
+	outline: red !important;
+	border-color: red !important;
+}
+
+body .slick-arrow {
+	background: rgb(0 0 0 / 70%);
+	color: var(--primary-color);
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border-radius: 4px;
+	padding-top: 1px;
+	z-index: 2;
+}
+body .slick-arrow::before {
+	color: var(--primary-color);
+}
+
+body .slick-prev {
+	left: 1rem;
+}
+
+body .slick-next {
+	right: 1rem;
+}
+body .slick-prev:hover,
+body .slick-prev:focus,
+body .slick-next:hover,
+body .slick-next:focus {
+	color: var(--primary-color);
+	outline: none;
+	background: rgb(0 0 0 / 50%);
 }

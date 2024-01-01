@@ -4,35 +4,8 @@ import classes from "./AnalyticsChart.module.css";
 import Card from "../UI/Card/Card";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { Chart, Registry } from "chart.js";
-import { before } from "node:test";
-import { borderRadius, padding } from "polished";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const data = {
-	labels: ["View", "Leave", "Purchase", "Warning"],
-	datasets: [
-		{
-			label: "# of Votes",
-			data: [12, 19, 3, 2],
-			backgroundColor: [
-				"rgb(91, 147, 255)",
-				"rgb(255, 214, 107)",
-				"rgb(255, 143, 107)",
-				"rgb(96, 91, 255)",
-			],
-			borderColor: [
-				"rgb(91, 147, 255)",
-				"rgb(255, 214, 107)",
-				"rgb(255, 143, 107)",
-				"rgb(96, 91, 255)",
-			],
-			borderWidth: 1,
-			cutout: "80%",
-			borderRadius: 20,
-		},
-	],
-};
 
 const option = {
 	maintainAspectRatio: false,
@@ -72,7 +45,36 @@ const plugins = [
 	},
 ];
 
-export default function AnalyticsChart() {
+export default function AnalyticsChart({
+	requestData,
+}: {
+	requestData?: number[];
+}) {
+	const data = {
+		labels: ["View", "Leave", "Purchase", "Project"],
+		datasets: [
+			{
+				label: "# of Votes",
+				data: requestData,
+				backgroundColor: [
+					"rgb(91, 147, 255)",
+					"rgb(255, 214, 107)",
+					"rgb(255, 143, 107)",
+					"rgb(96, 91, 255)",
+				],
+				borderColor: [
+					"rgb(91, 147, 255)",
+					"rgb(255, 214, 107)",
+					"rgb(255, 143, 107)",
+					"rgb(96, 91, 255)",
+				],
+				borderWidth: 1,
+				cutout: "80%",
+				borderRadius: 20,
+			},
+		],
+	};
+
 	return (
 		<Card className={classes.chart}>
 			<Doughnut plugins={plugins} data={data} options={option} />

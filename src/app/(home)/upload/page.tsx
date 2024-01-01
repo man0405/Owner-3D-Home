@@ -6,7 +6,9 @@ export default function page() {
 	return (
 		<>
 			<Header name="Create New Project"></Header>
-			<main style={{ gridArea: "main", marginRight: "3rem" }}>
+			<main
+				style={{ gridArea: "main", marginRight: "3rem", marginTop: "2rem" }}
+			>
 				<Upload />
 			</main>
 		</>
