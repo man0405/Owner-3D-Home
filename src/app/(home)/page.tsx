@@ -51,9 +51,16 @@ export default function Home() {
 		error: errorWidget,
 		fetchData: fetchDataWidget,
 	} = useFetch<number[]>();
+	const {
+		data: dataReport,
+		loading: loadingReport,
+		error: errorReport,
+		fetchData: fetchReport,
+	} = useFetch<number[]>();
 
 	useEffect(() => {
 		fetchDataWidget({ method: "GET", link: "api/owners/statistic" });
+		fetchReport({ method: "GET", link: "api/visitPerMonth" });
 	}, []);
 
 	return (
@@ -78,7 +85,7 @@ export default function Home() {
 					)}
 				</div>
 				<div className={classes.chart}>
-					<ReportChart />
+					{dataReport && <ReportChart chartData={dataReport} />}
 					{dataWidget && (
 						<AnalyticsChart
 							requestData={[dataWidget[0], dataWidget[1], 1, dataWidget[2]]}

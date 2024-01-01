@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 
 import Slider from "react-slick";
@@ -84,7 +84,13 @@ export default function ProjectDetail(props: { data: HouseInfo }) {
 		speed: 500,
 	};
 
-	const { data, loading, error, fetchData } = useFetch();
+	const { data: res, loading, error, fetchData } = useFetch<number[]>();
+	useEffect(() => {
+		fetchData({
+			method: "GET",
+			link: "house/visitPerMonth/1",
+		});
+	}, []);
 
 	const first = props.data.name.split(" ")[0].toUpperCase();
 	const second = props.data.name
@@ -129,7 +135,11 @@ export default function ProjectDetail(props: { data: HouseInfo }) {
 			</div>
 
 			<div className={classes.right}>
-				<ReportChart style={{ height: "20rem" }} />
+				{res ? (
+					<ReportChart style={{ height: "20rem" }} chartData={res} />
+				) : (
+					<></>
+				)}
 
 				<div className={classes.interior}>
 					<div className={`${classes.subtile} container`}>Interior Service</div>

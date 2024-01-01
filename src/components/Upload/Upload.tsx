@@ -92,7 +92,7 @@ export default function Upload() {
 		if (!response2.ok) throw new Error("Something went wrong");
 		const data2 = await response2.json();
 		if (data2.id) {
-			// router.push(`/project/${data2.id}`);
+			router.push(`/project/${data2.id}`);
 		}
 	};
 

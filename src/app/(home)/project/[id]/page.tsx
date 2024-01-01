@@ -11,6 +11,7 @@ const ProjectDetailPage = () => {
 	const pathname = useParams();
 	console.log("file: page.tsx:10 ~ ProjectDetailPage ~ pathname:", pathname);
 	const { data, loading, error, fetchData } = useFetch<HouseInfo>();
+
 	useEffect(() => {
 		fetchData({ method: "GET", link: `house/owner/id/${pathname.id}` });
 	}, [pathname.id]);

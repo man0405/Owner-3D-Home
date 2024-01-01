@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useReducer, useState } from "react";
+import React, { useEffect, useMemo, useReducer, useState } from "react";
 import classes from "./CustomerTable.module.css";
 
 import {
@@ -14,13 +14,14 @@ import {
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { IoMdCloseCircle } from "react-icons/io";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
-import { Person, makeData } from "./makeData";
 
 import Card from "../UI/Card/Card";
+import { useFetch } from "@/hook/useFetch";
+import { Person } from "@/utils/type";
 
-export default function CustomerTable() {
+export default function CustomerTable({ data }: { data: Person }) {
 	const [sorting, setSorting] = useState<SortingState>([]);
-	const [data, setData] = useState(() => makeData(1000));
+	// const [data, setData] = useState(() => makeData(1000));
 
 	const columns = useMemo<ColumnDef<Person>[]>(
 		() => [

@@ -63,6 +63,15 @@ export interface HouseInfo {
 	id: number;
 }
 
+export type Person = {
+	firstName: string;
+	lastName: string;
+	project: string;
+	email: string;
+	phone: string;
+	priority: true | false;
+};
+
 export interface customPage<T> {
 	content: T[];
 	pageable: {

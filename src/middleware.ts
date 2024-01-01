@@ -29,6 +29,8 @@ export async function middleware(request: NextRequest) {
 	// 	return;
 	// }
 
+	url.pathname = "/signin";
+
 	if (!cookie) {
 		return NextResponse.redirect(url);
 	} else {
@@ -43,7 +45,6 @@ export async function middleware(request: NextRequest) {
 			return NextResponse.next();
 		}
 		if (response.status === 403) {
-			url.pathname = "/signin";
 			return NextResponse.redirect(url);
 		}
 	}
